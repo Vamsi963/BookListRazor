@@ -1,0 +1,44 @@
+﻿@page
+@model BookListRazor.Pages.BookList.EditModel
+@{
+}
+
+
+<br />
+<h3 class="text-info">Book Details</h3>
+<div class="container mt-3 p-3">
+    <form method="post" class="border col-4 p-3">
+
+        <input type="hidden" asp-for="Book.Id" />
+
+        <div class="form-row">
+            <label asp-for="Book.Name" class="text-dark"></label>
+        </div>
+        <div class="form-row">
+            <input asp-for="Book.Name" value=@Model.Book.Name class="form-control" />
+        </div>
+        <span asp-validation-for="Book.Name" class="text-danger"></span>
+        <br />
+        <div class="form-row">
+            <label asp-for="Book.Author"></label>
+        </div>
+        <div class="form-row">
+            <input asp-for="Book.Author" value=@Model.Book.Author class="form-control" />
+        </div>
+        <br />
+        <div class="form-row">
+            <label asp-for="Book.ISBN"></label>
+        </div>
+        <div class="form-row">
+            <input asp-for="Book.ISBN" value=@Model.Book.ISBN class="form-control" />
+        </div>
+        <br />
+        <input type="submit" value="Confirm" class="btn btn-primary"/>
+        <a class="btn btn-info" asp-page="Index">Back to Booklist</a>
+
+    </form>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
